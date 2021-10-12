@@ -32,7 +32,7 @@
                         <th> Guests </th>
                         <th> Date </th>
                         <th> Time </th>
-                        <th> Edit </th>
+                        <th> Details </th>
                         <th> Delete </th>
                       </tr>
                     </thead>
@@ -51,13 +51,13 @@
 
                         <td>
                             <div class="badge badge-outline-primary">
-                                <a href="{{route('food.edit', $row->id)}}">Edit</a>
+                                <a href="{{route('reserve.show', $row->id)}}">View</a>
                             </div>
                           </td>
 
                         <td>
                           <div>
-                            <form method="POST" action="{{route('food.destroy', $row->id) }}"  >
+                            <form method="POST" action="{{route('reserve.destroy', $row->id) }}"  >
                                 @csrf
                                 @method('DELETE')
 

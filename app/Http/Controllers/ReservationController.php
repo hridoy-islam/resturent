@@ -45,9 +45,10 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Reservation $reservation)
+    public function show($id)
     {
-        //
+        $data = Reservation::find($id);
+        return view('admin.reservation.show', compact('data'));
     }
 
     /**
@@ -79,8 +80,11 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reservation $reservation)
+    public function destroy($id)
     {
-        //
+        $data = Reservation::find($id);
+        $data->delete();
+        return back()
+            ->with('success','You have successfully Deleted Reservation');
     }
 }
