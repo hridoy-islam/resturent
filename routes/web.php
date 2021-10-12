@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChefController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
@@ -34,6 +36,8 @@ Route::prefix('checkuser')->group(function () {
     Route::resource('food', FoodController::class);
     Route::resource('reserve', ReservationController::class);
     Route::resource('chef', ChefController::class);
+    Route::resource('blog', BlogController::class);
+    Route::resource('category', CategoryController::class);
 });
 
 
